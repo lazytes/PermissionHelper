@@ -1,14 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,4 +25,31 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    // bintray
+    bintrayRepo = 'maven'
+    bintrayName = 'android-permission'
+
+    // library
+    libraryName = 'PermissionHelper'
+    libraryGroupId = 'io.github.lazytes'
+    libraryArtifactId = 'android-permission'
+    libraryDescription = 'Android runtime permission library'
+    libraryVersion = '0.1.0'
+
+    // developer
+    developerId = 'lazytes'
+    developerName = 'lazytes'
+    developerEmail = 'emyia.angra@gmail.com'
+
+    // license
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    licenseAbbr = ['Apache-2.0']
+
+    // connection
+    siteUrl = 'https://github.com/lazytes/PermissionHelper'
+    gitUrl = 'https://github.com/lazytes/PermissionHelper.git'
 }

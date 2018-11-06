@@ -23,8 +23,6 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -47,3 +45,6 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
     implementation 'com.google.guava:guava-base:r03'
 }
+
+apply from: 'publish.gradle'
+apply from: 'install.gradle'
